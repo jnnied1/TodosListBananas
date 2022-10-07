@@ -154,8 +154,10 @@ export default {
   },
   methods: {
     addTask() {
-      this.tasks.push({name : this.newTask, validate: false});
-      this.newTask = "";
+      if(this.newTask){
+        this.tasks.push({name : this.newTask, validate: false});
+        this.newTask = "";
+      }
     },
     deleteTask(item) {
       let pos = this.tasks.indexOf(item);
